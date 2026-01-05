@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aidan Lee | Contact</title>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="site-inner">
+      <nav class="nav" aria-label="Site navigation">
+        <div class="nav-links">
+          <a href="./index.html" class="nav-link">About</a>
+          <a href="./construction.html" class="nav-link">Projects
+          <!-- <a href="./projects/projects.html" class="nav-link">Projects</a>-->
+          <a href="./cv.html" class="nav-link">CV</a>
+          <a href="./contact.html" class="nav-link active">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contact-section">
+    <div class="site-inner">
+      <div class="contact-container">
+
+        <header class="contact-header">
+          <h1 class="contact-title">Contact</h1>
+          <p class="contact-subtitle">Reach out directly or send a message below.</p>
+        </header>
+
+        <section class="contact-grid" aria-label="Contact content">
+
+          <div class="contact-left" aria-label="Contact information">
+            <div class="contact-row">
+              <div class="contact-label">Email</div>
+              <a class="contact-value" href="mailto:aidanlee@berkeley.edu">aidanlee@berkeley.edu</a>
+            </div>
+
+            <div class="contact-row">
+              <div class="contact-label">Phone</div>
+              <a class="contact-value" href="tel:+13232712920">(323) 271-2920</a>
+            </div>
+          </div>
+
+          <div class="contact-right" id="contactRight" aria-label="Contact form">
+            <form
+              id="contactForm"
+              action="https://formspree.io/f/xdakwprq"
+              method="POST"
+              class="contact-form"
+              autocomplete="on"
+            >
+              <label class="sr-only" for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Name" required />
+
+              <label class="sr-only" for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="Email" required />
+
+              <label class="sr-only" for="message">Message</label>
+              <textarea id="message" name="message" rows="6" placeholder="Message" required></textarea>
+
+              <div class="contact-actions" aria-label="Form actions">
+                <p class="contact-note">I read every message and typically respond within a few days.</p>
+                <button class="contact-submit" id="sendBtn" type="submit">Send</button>
+              </div>
+
+              <p class="contact-error" id="contactError" role="alert" aria-live="polite"></p>
+            </form>
+          </div>
+
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="../assets/js/contact.js" defer></script>
+</body>
+</html>
