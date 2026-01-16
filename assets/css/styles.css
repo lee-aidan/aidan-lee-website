@@ -1,7 +1,7 @@
 /* ========= Base ========= */
 :root{
   /* ====== SCALE (100% -> 125%) ====== */
-  --ui-scale: 1.15;
+  --ui-scale: 1;
 
   --left-col: calc(260px * var(--ui-scale));
   --headshot-max: calc(230px * var(--ui-scale));
@@ -610,10 +610,9 @@ a{
   max-width: var(--text-max);
 }
 
-/* Simple grid for now */
 .projects-grid{
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr; /* single column */
   gap: calc(18px * var(--ui-scale));
 }
 
@@ -634,17 +633,29 @@ a{
   margin: 0 0 calc(10px * var(--ui-scale)) 0;
   font-size: calc(14px * var(--ui-scale));
   line-height: 1.55;
+  text-align: justify;
 }
 
-.project-links{
-  display: flex;
-  gap: calc(12px * var(--ui-scale));
+.projects-block{
+  margin-top: calc(28px * var(--ui-scale));
 }
 
-.project-link{
-  font-size: calc(13px * var(--ui-scale));
+.projects-block > .projects-title{
+  margin-bottom: calc(18px * var(--ui-scale));
+}
+.projects-block--spaced{
+  margin-top: calc(48px * var(--ui-scale));
+}
+
+.project-desc a{
+  color: #316dcd;
   text-decoration: underline;
-  color: var(--text);
+  text-underline-offset: 2px;
+}
+
+.project-desc a:hover,
+.project-desc a:focus-visible{
+  color: #316dcd;
 }
 
 /* ========= Responsive ========= */
@@ -652,6 +663,9 @@ a{
   .projects-section{
     padding: 40px 0;
     min-height: auto;
+  }
+  .project-desc{
+    text-align: left;
   }
   .projects-grid{
     grid-template-columns: 1fr;
