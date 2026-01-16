@@ -16,7 +16,7 @@
       <nav class="nav" aria-label="Site navigation">
         <div class="nav-links">
           <a href="../index.html" class="nav-link">About</a>
-          <a href="./projects/projects.html" class="nav-link active">Projects</a>
+          <a href="./project.html" class="nav-link active">Projects</a>
           <a href="../cv.html" class="nav-link">CV</a>
           <a href="../contact.html" class="nav-link">Contact</a>
         </div>
@@ -29,19 +29,27 @@
     <div class="site-inner">
       <div class="projects-container">
 
+        <!-- Page Title (independent scale from section headings) -->
+        <header class="projects-header">
+          <h1 class="projects-page-title">Projects</h1>
+          <p class="projects-subtitle">
+            Current research collaborations, applied informatics work, and personal explorations.
+          </p>
+        </header>
+
         <!-- Current Projects -->
         <section class="projects-block" aria-labelledby="current-projects">
-          <h2 class="projects-title" id="current-projects">Current Projects</h2>
+          <h2 class="projects-section-title" id="current-projects">Current Projects</h2>
 
           <section class="projects-grid" aria-label="Current project list">
             <article class="project-card">
               <h3 class="project-name">Data-Driven Severity Phenotyping of Rare Fungal Infections Using Electronic Health Records</h3>
               <p class="project-desc">
-                For my master’s capstone, I’m analyzing large-scale electronic health record (EHR) data to characterize how disease severity 
-                manifests in the rare fungal infections histoplasmosis and blastomycosis. I’m using EHR-derived clinical indicators—including diagnoses, 
-                care setting utilization, comorbidity burden, and antifungal treatment patterns—to model patient trajectories across acute, post-acute, 
-                and longer-term phases of illness. By applying unsupervised statistical methods to these multidimensional indicators, I aim to identify 
-                data-driven severity phenotypes that are clinically interpretable and reflect real-world disease complexity, particularly in contexts where 
+                For my master’s capstone, I’m analyzing large-scale electronic health record (EHR) data to characterize how disease severity
+                manifests in the rare fungal infections histoplasmosis and blastomycosis. I’m using EHR-derived clinical indicators—including diagnoses,
+                care setting utilization, comorbidity burden, and antifungal treatment patterns—to model patient trajectories across acute, post-acute,
+                and longer-term phases of illness. By applying unsupervised statistical methods to these multidimensional indicators, I aim to identify
+                data-driven severity phenotypes that are clinically interpretable and reflect real-world disease complexity, particularly in contexts where
                 prospective cohort studies are infeasible due to disease rarity.
               </p>
             </article>
@@ -49,11 +57,10 @@
             <article class="project-card">
               <h3 class="project-name"><em>CocciCast:</em> Automated Coccidioidomycosis Forecasting Platform</h3>
               <p class="project-desc">
-                In collaboration with PhD candidate Simon Camponuri, I’m developing a user-facing web platform for an automated coccidioidomycosis (Valley fever) 
-                forecasting model in California. My work focuses on building the data infrastructure and automation pipeline that ingests historical and ongoing 
-                environmental data alongside coccidioidomycosis case data, and integrates these 
-                inputs with an established environmental forecasting model described 
-                <a href="https://www.thelancet.com/journals/lanplh/article/PIIS2542-5196(22)00202-9/fulltext" target="_blank" rel="noopener noreferrer">here</a>. 
+                In collaboration with PhD candidate Simon Camponuri, I’m developing a user-facing web platform for an automated coccidioidomycosis (Valley fever)
+                forecasting model in California. My work focuses on building the data infrastructure and automation pipeline that ingests historical and ongoing
+                environmental data alongside coccidioidomycosis case data, and integrates these inputs with an established environmental forecasting model described
+                <a href="https://www.thelancet.com/journals/lanplh/article/PIIS2542-5196(22)00202-9/fulltext" target="_blank" rel="noopener noreferrer">here</a>.
                 The goal is to support scalable, reproducible cocci risk forecasting by streamlining data updates and model execution within an accessible web-based UI.
               </p>
             </article>
@@ -62,45 +69,51 @@
 
         <!-- Professional Projects -->
         <section class="projects-block" aria-labelledby="professional-projects">
-          <h2 class="projects-title" id="professional-projects">Professional Projects</h2>
+          <h2 class="projects-section-title" id="professional-projects">Professional Projects</h2>
 
           <section class="projects-grid" aria-label="Professional project list">
             <article class="project-card">
               <h3 class="project-name">Estimating the Burden of Underreported Fungal Diseases in the United States</h3>
               <p class="project-desc">
-                Using large-scale electronic health records and U.S. Census data, I estimate the prevalence of multiple invasive fungal diseases at national and state levels, including in states where these infections are not reportable. I model demographic, geographic, and climate-associated risk factors to identify patterns in individual- and population-level disease risk. This work addresses major gaps in fungal disease surveillance and contributes to national estimates of fungal burden.
-
+                Using large-scale electronic health records and U.S. Census data, I estimate the prevalence of multiple invasive fungal diseases at national and state levels,
+                including in states where these infections are not reportable. I model demographic, geographic, and climate-associated risk factors to identify patterns in
+                individual- and population-level disease risk. This work addresses major gaps in fungal disease surveillance and contributes to national estimates of fungal burden.
               </p>
             </article>
 
-          <section class="projects-grid" aria-label="Current project list">
             <article class="project-card">
               <h3 class="project-name">Benchmarking EHR-Derived Fungal Disease Estimates Against National Inpatient Data</h3>
               <p class="project-desc">
-                To evaluate the reliability of electronic health record data for fungal disease surveillance, I benchmarked EHR-derived estimates of histoplasmosis and blastomycosis against the HCUP National Inpatient Sample. This project assesses how well real-world clinical data capture national patterns of disease and informs best practices for using EHRs in epidemiologic research on underreported infections.
+                To evaluate the reliability of electronic health record data for fungal disease surveillance, I benchmarked EHR-derived estimates of histoplasmosis and blastomycosis
+                against the HCUP National Inpatient Sample. This project assesses how well real-world clinical data capture national patterns of disease and informs best practices for
+                using EHRs in epidemiologic research on underreported infections.
               </p>
             </article>
-            
-          <section class="projects-grid" aria-label="Current project list">
+
             <article class="project-card">
               <h3 class="project-name">Automated Crosswalk Generation for Clinical Diagnostic Code Standardization</h3>
               <p class="project-desc">
-                I developed a web-scraping–based informatics pipeline to harmonize clinical diagnostic codes across ICD-9, SNOMED CT, and ICD-10 for large-scale fungal disease surveillance. Given an ICD-9 or SNOMED CT input code, the system programmatically queries authoritative online resources, extracts hierarchical and relational mappings, and applies rule-based validation to generate standardized ICD-10 equivalents. This tool supports reproducible epidemiologic analyses by enabling consistent case identification across heterogeneous clinical datasets and legacy health record systems.
+                I developed a web-scraping–based informatics pipeline to harmonize clinical diagnostic codes across ICD-9, SNOMED CT, and ICD-10 for large-scale fungal disease surveillance.
+                Given an ICD-9 or SNOMED CT input code, the system programmatically queries authoritative online resources, extracts hierarchical and relational mappings, and applies rule-based
+                validation to generate standardized ICD-10 equivalents. This tool supports reproducible epidemiologic analyses by enabling consistent case identification across heterogeneous
+                clinical datasets and legacy health record systems.
               </p>
-            </article>     
-            
-          <section class="projects-grid" aria-label="Current project list">
+            </article>
+
             <article class="project-card">
               <h3 class="project-name">Automated Overdose Surveillance from Unstructured Public Health Records</h3>
               <p class="project-desc">
-                For Marin County Health and Human Services, I developed an automated OCR-based pipeline to process Poison Control and Coroner’s Office reports ingested as PDFs. Using robust text parsing, cleaning, and validation scripts, I transformed over a decade of unstructured historical records into tabulated data suitable for analysis. I then conducted epidemiologic analyses on these data to support internal dashboards, surveillance, and public health reporting.
+                For Marin County Health and Human Services, I developed an automated OCR-based pipeline to process Poison Control and Coroner’s Office reports ingested as PDFs. Using robust
+                text parsing, cleaning, and validation scripts, I transformed over a decade of unstructured historical records into tabulated data suitable for analysis. I then conducted
+                epidemiologic analyses on these data to support internal dashboards, surveillance, and public health reporting.
               </p>
-            </article>               
+            </article>
 
             <article class="project-card">
               <h3 class="project-name">Building and Analyzing a Global Dataset of Historical Tax Revolts</h3>
               <p class="project-desc">
-                I built an informatics pipeline to structure nearly 400 historical tax revolt events from an unstructured economic history text and conducted computational analyses using NLP and large language model APIs to classify revolt characteristics and infer spatiotemporal patterns, supporting early dissertation research by Economics PhD candidate Eva Davoine.
+                I built an informatics pipeline to structure nearly 400 historical tax revolt events from an unstructured economic history text and conducted computational analyses using NLP
+                and large language model APIs to classify revolt characteristics and infer spatiotemporal patterns, supporting early dissertation research by Economics PhD candidate Eva Davoine.
               </p>
             </article>
           </section>
@@ -108,14 +121,14 @@
 
         <!-- Personal Projects -->
         <section class="projects-block" aria-labelledby="personal-projects">
-          <h2 class="projects-title" id="personal-projects">Personal Projects</h2>
+          <h2 class="projects-section-title" id="personal-projects">Personal Projects</h2>
 
           <section class="projects-grid" aria-label="Personal project list">
             <article class="project-card">
               <h3 class="project-name">A Multimodal Analysis of <em>Getting Killed</em> by Geese</h3>
               <p class="project-desc">
                 Blending my two passions of music and quantitative data analysis, I explore the sonic and lyrical elements of <em>Getting Killed,</em>
-                the latest EP by booming NY rock band, Geese. Using audio embeddings and text analysis, I compare relationships between tracks and explore 
+                the latest EP by booming NY rock band, Geese. Using audio embeddings and text analysis, I compare relationships between tracks and explore
                 how these patterns align with listener response.
               </p>
             </article>
@@ -123,9 +136,9 @@
             <article class="project-card">
               <h3 class="project-name">Website Development</h3>
               <p class="project-desc">
-                  What began as an exercise in learning new coding languages, building websites for myself and friends has gradually become a space to 
-                  explore how people interact with information. As I work through these projects, I’ve become more aware of my place in a growing digital
-                  age and how my decisions can meaningfully shape how information is accessed and understood.
+                What began as an exercise in learning new coding languages, building websites for myself and friends has gradually become a space to
+                explore how people interact with information. As I work through these projects, I’ve become more aware of my place in a growing digital
+                age and how my decisions can meaningfully shape how information is accessed and understood.
               </p>
             </article>
           </section>
