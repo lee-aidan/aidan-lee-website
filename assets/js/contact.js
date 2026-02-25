@@ -6,42 +6,65 @@
 
   if (!form || !rightCol || !sendBtn || !errorEl) return;
 
-  const setError = (msg) => { errorEl.textContent = msg; };
-  const clearError = () => { errorEl.textContent = ""; };
+  const initialButtonText = sendBtn.textContent;
+
+  const setError = (msg) => {
+    errorEl.textContent = msg;
+  };
+
+  const clearError = () => {
+    errorEl.textContent = "";
+  };
+
+  const setSubmittingState = (submitting) => {
+    sendBtn.disabled = submitting;
+    sendBtn.setAttribute("aria-busy", String(submitting));
+    sendBtn.textContent = submitting ? "Sending..." : initialButtonText;
+  };
 
   const showThankYou = () => {
-    rightCol.innerHTML = `
-      <div class="contact-thankyou-wrapper" aria-live="polite">
-        <p class="contact-thankyou">Thank you for your message!</p>
-      </div>
-    `;
+    const wrapper = document.createElement("div");
+    wrapper.className = "contact-thankyou-wrapper";
+    wrapper.setAttribute("aria-live", "polite");
+
+    const message = document.createElement("p");
+    message.className = "contact-thankyou";
+    message.textContent = "Thank you for your message!";
+
+    wrapper.appendChild(message);
+    rightCol.replaceChildren(wrapper);
   };
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     clearError();
 
-    // native validation UI
+    if (sendBtn.disabled) return;
+
     if (!form.checkValidity()) {
       form.reportValidity();
       return;
     }
 
-    sendBtn.disabled = true;
+    setSubmittingState(true);
 
     try {
-      const res = await fetch(form.action, {
+      const response = await fetch(form.action, {
         method: "POST",
         body: new FormData(form),
         headers: { Accept: "application/json" },
       });
 
-      if (!res.ok) throw new Error("Submit failed");
+      if (!response.ok) {
+        throw new Error(`Submit failed (${response.status})`);
+      }
 
+      form.reset();
       showThankYou();
-    } catch (err) {
-      sendBtn.disabled = false;
+    } catch (error) {
+      setSubmittingState(false);
       setError("Something went wrong. Please try again.");
+      console.error(error);
     }
   });
 })();
