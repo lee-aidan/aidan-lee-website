@@ -914,6 +914,19 @@ html{
   background: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0));
 }
 
+/* CV page: disable hover movement */
+.cv-page .cv-entry{
+  transition: border-color 0.18s ease, background-color 0.18s ease;
+}
+
+.cv-page .cv-entry:hover{
+  transform: none;
+}
+
+.cv-page .nav-link{
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
 /* Projects page: keep original palette, upgrade layout and movement */
 .projects-header{
   margin: 0 0 var(--s-4) 0;
