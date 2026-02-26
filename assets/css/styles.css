@@ -927,6 +927,38 @@ html{
   transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
 }
 
+.projects-header .projects-subtitle{
+  margin-bottom: 0;
+}
+
+.projects-header + .cv-block{
+  margin-top: 0;
+}
+
+.cv-header .projects-subtitle{
+  margin-bottom: 0;
+}
+
+.cv-header .projects-subtitle em{
+  margin-top: 0;
+}
+
+.contact-right{
+  padding: 14px 14px 12px;
+}
+
+.contact-error{
+  display: none;
+  margin: 2px 0 0 0;
+  min-height: 0;
+}
+
+.contact-error:not(:empty){
+  display: block;
+  margin-top: 6px;
+  min-height: 1em;
+}
+
 /* Projects page: keep original palette, upgrade layout and movement */
 .projects-header{
   margin: 0 0 var(--s-4) 0;
@@ -1090,7 +1122,7 @@ html{
   }
 
   .contact-right{
-    padding: 12px;
+    padding: 12px 12px 7px;
   }
 }
 
